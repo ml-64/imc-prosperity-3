@@ -812,7 +812,7 @@ class Trader:
         sorted_asks = sorted(order_depth.sell_orders.items(), key=lambda x: x[0])
         sorted_bids = sorted(order_depth.buy_orders.items(), key=lambda x: -x[0])
 
-        # basic bitch market making #
+        # idk what happened here #
         res_price = round(self.acceptable_prices["KELP"] - (0.05 * current_position))
         spread = 1
 
