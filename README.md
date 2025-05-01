@@ -21,6 +21,11 @@ I didn't have a lot of time to write kelp trading, so I ended up just taking the
 
 For ink, I calculated the exponential moving average at each time stamp. Then, I calculated the standard deviation of the moving average over time at each time stamp. Lastly, I calculated z-score by subtracting the current EMA from the current mid price, dividing by the standard deviation of moving averages. I do not think this is how we should have been calculating z-score. In any case, if the magnitude of the z-score was greater than 2, we made trades, again dynamically limiting how much we trade based on the divergence between the current mid price and EMA.
 
+
 The last thing I did for ink was that I set up a system to try to keep our position close to zero. As a result, we would send out profitable orders for the next timestamp that opposed our position. For example, if we had just bought 30 ink at 100 seashells, we would send out an ask order for 30 ink at 102 seashells.
 
 Manual trading was simple. Given a matrix of imperfect exchange rates between four currencies (i.e. the exchange rate between asset 1->asset 2 was not the reciprocal of exchange rate between asset 2->asset 1), the goal was to find a set of five trades that maximized profit. The elegant way to do this is through some dynamic programming solution; however, since it was only five trades, we ended up brute-forcing to get the best solution. 
+
+## Round 2 
+
+This round Buck and Akash were back and able to help with the next challenge, trading a basket of commodities and the specific commodities that make up the basket.  
